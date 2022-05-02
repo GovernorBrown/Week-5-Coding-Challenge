@@ -10,3 +10,9 @@ function pizza (y){
 }
 console.log(pizza(4));
 console.log(pizza(3));
+
+const whatever = arrowmyFunction => {
+    const x = num1 - num2
+    return (x);
+};
+console.log(whatever(num1=2, num2=4));
