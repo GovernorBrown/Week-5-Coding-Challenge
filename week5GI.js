@@ -39,40 +39,12 @@ console.log(governor.getName());
 
 //}
    
-const Person2 = class {
+class Person2 {
     constructor (name,job,age){
         this.name=name;
         this.job=job;
         this.age=age;
-    class Programmer {
-        
-    constructor(givenLanguages){
-        this.name=super.name;
-        this.job=super.job;
-        this.age=super.age;
-        this.busy=true;
-        this.languages=givenLanguages;
-        }
-        completeTask(){
-        this.busy=false;
-    }
-        acceptNewTask(){
-        this.busy=true;
-        }
-        offerNewTask(){
-            if(this.busy==true){
-                console.log(`We can't take any additional requests right now`);
-            } else {
-                console.log(`How can we help?`);
-            }
-        } 
-        learnLanguage(newlanguage){
-            this.languages.push(newlanguage);
-        }
-        listLanguage(){
-            this.languages.list();
-        }
-    }
+    
     }
     exercise(){
         console.log(`Let's Workout`);
@@ -82,3 +54,35 @@ const Person2 = class {
     }
 }
 
+class Programmer extends Person2{
+        
+    constructor(name,job,age,givenLanguages){
+        this.name=super.name;
+        this.job=super.job;
+        this.age=super.age;
+        this.busy=true;
+        this.languages=givenLanguages;
+    }
+    completeTask(){
+    this.busy=false;
+    }
+    acceptNewTask(){
+    this.busy=true;
+    }
+    offerNewTask(){
+        if(this.busy==true){
+            console.log(`We can't take any additional requests right now`);
+        } else {
+            console.log(`How can we help?`);
+        }
+    } 
+    learnLanguage(newlanguage){
+        this.languages.push(newlanguage);
+    }
+    listLanguage(){
+        this.languages.list();
+    }
+}
+
+const governorB =  new Person2(`Governor`, `Tech`, 22);
+console.log(governorB.exercise());
